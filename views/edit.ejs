@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit bar</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/5db6791db8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="totalForm">
+
+            <form action="/edit/<%-Toddle.id%>" method="POST">
+                <input type="text" name="name" id="name" placeholder="Name" value="<%- Toddle.name %>">
+                <input type="text" name="profession" id="profession" placeholder="Profession" value="<%- Toddle.profession %>">
+                <input type="text" name="age" id="age" placeholder="Age" value="<%- Toddle.age %>">
+    
+                <input type="submit" value="Edit" id="button">
+            </form>
+        </div>
+
+
+
+
+    
+
+    </div>
+</body>
+</html>

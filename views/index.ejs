@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD operation</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/5db6791db8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="totalForm">
+
+            <form action="/toddle" method="POST">
+                <input type="text" name="name" id="name" placeholder="Name">
+                <input type="text" name="profession" id="profession" placeholder="Profession">
+                <input type="text" name="age" id="age" placeholder="Age">
+    
+                <input type="submit" value="Submit" id="button">
+            </form>
+        </div>
+
+
+
+
+    <% data.forEach((Toddle)=>{ %>
+            
+        <div class="list">
+            <div class="tableRow">
+                <table>
+                    <tr>
+                      <th>Name</th>
+                      <th>Profession</th>
+                      <th>Age</th>
+                    </tr>
+                    <tr>
+                      <td><%- Toddle.name %></td>
+                      <td><%- Toddle.profession %></td>
+                      <td><%- Toddle.age %></td>
+                    </tr>
+                  </table>
+
+                <div class="icons">
+                    <a href="/edit/<%- Toddle._id %>"><i class="fa-solid fa-ellipsis-vertical" ><Span></Span></i></a>
+                    <a href="/delete/<%- Toddle._id %>"><i class="fa-solid fa-delete-left" onclick="alertBox()"><span></span></i></a>
+                </div>   
+            </div>
+        </div>
+
+        <% }); %>
+
+    </div>
+</body>
+
+<script>
+    function alertBox(){
+        alert('Item deleted successfully')
+    }
+</script>
+</html>
